@@ -1,0 +1,48 @@
+## Added this to root directory of where PhpMyAdmin is installed
+## /svr/users/serverpilot/apps/0default/public
+## Features:
+# Password Protect
+# Disable googlebot from indexing the site
+
+###########################################
+<IfModule mod_security.c>
+# disable POST processing to not break multiple image upload
+    SecFilterEngine Off
+    SecFilterScanPOST Off
+</IfModule>
+
+############################################
+<IfModule mod_ssl.c>
+## make HTTPS env vars available for CGI mode
+    SSLOptions StdEnvVars
+</IfModule>
+
+############################################
+## Prevent character encoding issues from server overrides
+## If you still have problems, use the second line instead
+    AddDefaultCharset Off
+    #AddDefaultCharset UTF-8
+    
+############################################
+# Prevent viewing of .htaccess
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
+
+############################################
+## Password Protect
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /path/to/.htpasswd
+Require valid-user
+
+############################################
+## Prevent Search Engines from indexing
+Header set X-Robots-Tag "noindex, nofollow"
+
+## Note! Insert <meta name="robots" content="noindex,nofollow"> at head of index file
+############################################
+
+
+
