@@ -1,0 +1,77 @@
+# Version: 1.1
+# Removal of Mysql and Installation of Percona 5.6.25-73.1
+# Author: Sheikh Farhan
+# Date: 19 July 2015
+
+Stop the service Mysql:
+$ service mysql stop
+
+$ apt-get --purge remove mysql-client mysql-server mysql-common
+$ apt-get autoremove
+
+Delete content of /etc/mysql/
+$ cd /etc/mysql
+$rm -rf *
+
+Prepare Percona 
+$ apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
+$ nano /etc/apt/sources.list
+
+Add the below to the list:
+deb http://repo.percona.com/apt trusty main
+deb-src http://repo.percona.com/apt trusty main
+
+$ touch /etc/apt/preferences.d/00percona.pref
+
+Add the below to the new file:
+Package: *
+Pin: release o=Percona Development Team
+Pin-Priority: 1001
+
+$ apt-get update && apt-get install percona-server-client-5.6
+$ apt-get update && apt-get install percona-server-server-5.6 
+
+At password prompt, enter original mysql root password (twice)
+
+After Installation complete:
+$ service mysql restart
+$ mysql_upgrade --force
+$ mysql_install_db
+$ mysql_secure_installation
+
+Enter new password: <>
+Go to /root/.my.cnf to change password to the above
+
+#Troubleshooting 
+#If database created at serverpilot not showing up (Access denied):
+remove ‘skip-name-resolve’  from my.cnf
+make sure all files in /etc/mysql/* are chown mysql:mysql
+$ mysqladmin reload
+$ mysqladmin flush-hosts
+
+# Steps taken to change my.cnf file
+# After installation of Percona 5.6
+
+$ service mysql stop
+
+Navigate to:
+
+$ cd /etc/mysql
+$ vim my.cnf
+:1,$d to remove all contents of the file
+
+Copy Paste the new my.cnf:
+my.cnf: 
+
+Before activating the change for ‘ innodb_log_file_size’ variable:
+At /var/lib/mysql:
+$ rm -rf iblogfile_0
+$ rm -rf iblogfile_1 
+$ rm -rf debian-5.5.flag
+
+DO NOT DELETE the file ibdata1
+
+Restart mysql
+$ service mysql restart
+
+
