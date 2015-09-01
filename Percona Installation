@@ -61,9 +61,10 @@ $ vim my.cnf
 :1,$d to remove all contents of the file
 
 Copy Paste the new my.cnf:
-my.cnf: 
+my.cnf: https://github.com/sheikhfarhan/svr2/blob/master/my.cnf
 
 Before activating the change for ‘ innodb_log_file_size’ variable:
+
 At /var/lib/mysql:
 $ rm -rf iblogfile_0
 $ rm -rf iblogfile_1 
