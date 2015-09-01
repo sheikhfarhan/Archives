@@ -72,6 +72,8 @@ Snapshots Disks and Images at Linode
 
 
 To do list:
+Minify js and css
+Merge scripts
 Optimise Apache’s .htaccess
 ngx_pagespeed 
 Load Balancer
@@ -80,5 +82,6 @@ Benchmark APC with Zend Opcache
 Memcached Sessions
 Redis Magento Cache
 CDN Set-Up
+Load test
 
 
