@@ -27,7 +27,7 @@ Users:
 <>
 
 Optimised Stack: 
-Linux
+Linux - Ubuntu 14.04 LTS
 PHP 5.6
 Nginx Stable as Reverse Proxy
 Apache 2.4 as Web Server
