@@ -17,13 +17,13 @@ DAYOFWEEK=$(date +"%A")
 
 MYSQLROOT= # use =root if want to backup all
 MYSQLPASS= # if use =root above, then can leave this empty, as password is saved at ~/.my.cnf file
-DATABASE= 'db01'  # use '--all-databases' if want to backup all
-FILENAME= mysql-${DATESTAMP}
-DESDIR= /home/gandalf/backupdir
-S3BUCKET= svr2backups
+DATABASE='db01'  # use '--all-databases' if want to backup all
+FILENAME=mysql-${DATESTAMP}
+DESDIR=/home/gandalf/backupdir
+S3BUCKET=svr2backups
 # the following line prefixes the backups with the defined directory. 
 #it must be blank or end with a /
-S3PATH= mysql/
+S3PATH=mysql/
 # when running via cron, the PATHs MIGHT be different. 
 #If have a custom/manual MYSQL install, to set this manually like MYSQLDUMPPATH=/usr/local/mysql/bin/
 #MYSQLDUMPPATH=
@@ -37,7 +37,7 @@ echo "Done backing up the database to a file."
 
 echo "Starting compression..."
 
-gzip -9 /${DESDIR}/${FILENAME}.sql
+gzip -9 ${DESDIR}/${FILENAME}.sql
 
 echo "Done compressing the backup file."
 
