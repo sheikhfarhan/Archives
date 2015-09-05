@@ -237,7 +237,7 @@
 
 #Password Protect the Website to prevent Googlebot from indexing our website
 #AuthType Basic
-#AuthName "Preview Site for bazaar22.com  - Password Required"
+#AuthName "Preview Site - Password Required"
 #AuthUserFile /path/to/.htpasswd
 #Require valid-user
 
