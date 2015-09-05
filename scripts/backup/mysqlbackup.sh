@@ -5,7 +5,7 @@
 #Version 3.0
 
 ## Create and Place this file in /home/path/under/user
-## Run a cronjob under user not root!
+## Run a cronjob under root
 ## automatic daily / weekly / monthly backup to S3 at 0415 daily
 ## 15 4 * * * sh /home/gandalf/mysqlbackup.sh auto
 
