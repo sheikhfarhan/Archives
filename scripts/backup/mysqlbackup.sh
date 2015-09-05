@@ -74,7 +74,7 @@ echo "Removing the cache files..."
 
 #Uncomment below if we do not wish to keep any backups on server
 # remove databases dump
-#rm ${DESDIR}/${FILENAME}.gz
+#rm ${DESDIR}/${FILENAME}.sql.gz
 echo "Files removed."
 echo "All done."
 
