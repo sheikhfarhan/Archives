@@ -45,7 +45,6 @@ Firewall Configuration: UFW & Fail2ban
 Emails Infrastructure Set-Up: 
 Postfix (Server Side)
 Zoho Mail for Domain Email Addresses (SPF and Domain Keys verified)
-Mandrill for Transactional Emails (SPF and DKIM Keys verified)
 
 Backup:
 Daily Backup Scripts for Website and Database 
@@ -53,8 +52,7 @@ Auto-transferred to S3 Bucket
 
 Monitoring Tools:
 Longview
-NewRelic
-SeaLion
+Serverpilot Stats
 
 Others:
 AWS S3 Account for remote storage
@@ -66,17 +64,15 @@ Website:
 Magento Framework 1.9.2.1 Installed
 Intenso 1.3.5 Theme Installed
 PHP Optimised via .user.ini file 
+Apache Optimised via .htaccess
 
 Snapshots Disks and Images at Linode
 
-
-
 To do list:
 SMFTP Pro Extension From Ashroder 
-Set-Up Reply-To for Transactional Emails
+Mailgun, Mandrill or Sendgrid Set-Up for Transactional Emails
 Minify js and css
 Merge scripts
-Optimise Apache’s .htaccess
 ngx_pagespeed 
 Load Balancer
 Turpentine or Varnish
