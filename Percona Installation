@@ -35,8 +35,6 @@ At password prompt, enter original mysql root password (twice)
 
 After Installation complete:
 $ service mysql restart
-$ mysql_upgrade --force
-$ mysql_install_db
 $ mysql_secure_installation
 
 Enter new password: <>
@@ -69,8 +67,10 @@ my.cnf: https://github.com/sheikhfarhan/svr2/blob/master/my.cnf
 Before activating the change for ‘ innodb_log_file_size’ variable:
 
 At /var/lib/mysql:
-$ rm -rf iblogfile_0
-$ rm -rf iblogfile_1 
+$ ls -l
+$ chown mysql:mysql debian-5.6.flag
+$ rm -rf ib_logfile_0
+$ rm -rf ib_logfile1 
 $ rm -rf debian-5.5.flag
 
 DO NOT DELETE the file ibdata1
