@@ -18,16 +18,16 @@ DAY=$(date +"%d")
 DAYOFWEEK=$(date +"%A")
 
 FILENAME=website-$DATESTAMP.tar.gz   # Backup file name format
-SRCDIR=/srv/users/aragorn/apps/website/public     # Location / Source of Backup
+SRCDIR=/srv/users/legolas/apps/website/public     # Location / Source of Backup
 DESDIR=/home/gandalf/backupdir      # Destination Directory (create this dir first!)
-S3BUCKET=svr2backups    
+S3BUCKET=svr2backups    #bucket name must be exact as per our S3
 S3PATH=website/
 
 # Save and Tar Website Folders and Files 
 # Not including cache,sessions and tmp files
 # Should be easier to do an exlude.txt.. oh well..
 
-tar -cpzf ${DESDIR}/${FILENAME} --exclude='/srv/users/aragorn/apps/website/media/catalog/product/cache' --exclude='/srv/users/aragorn/apps/website/var/cache' --exclude='/srv/users/aragorn/apps/website/public/var/session' --exclude='/srv/users/aragorn/apps/website/public/var/tmp' --exclude='/srv/users/aragorn/apps/website/public/var/package/tmp' $SRCDIR
+tar -cpzf ${DESDIR}/${FILENAME} --exclude='/srv/users/legolas/apps/website/media/catalog/product/cache' --exclude='/srv/users/legolas/apps/website/var/cache' --exclude='/srv/users/legolas/apps/website/public/var/session' --exclude='/srv/users/legolas/apps/website/public/var/tmp' --exclude='/srv/users/legolas/apps/website/public/var/package/tmp' $SRCDIR
 
 echo "Done backing up and compressing the website to a file."
 
