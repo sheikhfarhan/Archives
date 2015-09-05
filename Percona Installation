@@ -42,6 +42,9 @@ $ mysql_secure_installation
 Enter new password: <>
 Go to /root/.my.cnf to change password to the above
 
+Install Percona Toolkit
+$ apt-get install percona-toolkit
+
 #Troubleshooting 
 #If database created at serverpilot not showing up (Access denied):
 remove ‘skip-name-resolve’  from my.cnf
