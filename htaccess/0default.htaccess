@@ -1,5 +1,5 @@
 ## Added this to root directory of where PhpMyAdmin is installed
-## /svr/users/serverpilot/apps/0default/public
+## /path/to/root/public
 ## Features:
 # Password Protect
 # Disable googlebot from indexing the site
