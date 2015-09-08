@@ -6,8 +6,8 @@
 
 ## Place this file in /home/path/under/user
 ## automatic daily / weekly / monthly backup to S3.
-## Add the line below to cronjob (root) for a 4am daily run
-## 0 4 * * * sh /path/to/webbackup.sh auto
+## Add the line below to cronjob (user not root!) for a 4am daily run
+## 0 4 * * * sh /home/gandalf/webbackup.sh auto
 
 
 
@@ -18,16 +18,16 @@ DAY=$(date +"%d")
 DAYOFWEEK=$(date +"%A")
 
 FILENAME=website-$DATESTAMP.tar.gz   # Backup file name format
-SRCDIR=/path/to/root/public     # Location / Source of Backup
-DESDIR=/path/to/backupdir      # Destination Directory (create this dir first!)
-S3BUCKET=    #bucket name must be exact as per our S3
+SRCDIR=/srv/users/aragorn/apps/website/public     # Location / Source of Backup
+DESDIR=/home/gandalf/backupdir      # Destination Directory (create this dir first!)
+S3BUCKET=svr2backups    #bucket name must be exact as per our S3
 S3PATH=website/
 
 # Save and Tar Website Folders and Files 
 # Not including cache,sessions and tmp files
 # Should be easier to do an exlude.txt.. oh well..
 
-tar -cpzf ${DESDIR}/${FILENAME} --exclude='~/apps/website/media/catalog/product/cache' --exclude='~/apps/website/var/cache' --exclude='~/apps/website/public/var/session' --exclude='~/apps/website/public/var/tmp' --exclude='~/apps/website/public/var/package/tmp' $SRCDIR
+tar -cpzf ${DESDIR}/${FILENAME} $SRCDIR --exclude='/srv/users/aragorn/apps/website/public/media/catalog/product/cache' --exclude='/srv/users/aragorn/apps/website/public/var/cache' --exclude='/srv/users/aragorn/apps/website/public/var/session' --exclude='/srv/users/aragorn/apps/website/public/var/tmp' --exclude='/srv/users/aragorn/apps/website/public/var/package/tmp' 
 
 echo "Done backing up and compressing the website to a file."
 
