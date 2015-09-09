@@ -7,7 +7,7 @@
 ## Create and Place this file in /home/path/under/user
 ## Run a cronjob under user not root!
 ## automatic daily / weekly / monthly backup to S3 at 0415 daily
-## 15 4 * * * sh /home/gandalf/mysqlbackup.sh auto
+## 15 4 * * * sh mysqlbackup.sh auto
 
 DATESTAMP=$(date +"%d.%m.%Y-%H%M")
 DAY=$(date +"%d")
