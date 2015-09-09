@@ -5,9 +5,9 @@
 #Version 3.0
 
 ## Create and Place this file in /home/path/under/user
-## Run a cronjob under root
+## Run a cronjob under user not root!
 ## automatic daily / weekly / monthly backup to S3 at 0415 daily
-## 15 4 * * * sh /path/to/mysqlbackup.sh auto
+## 15 4 * * * sh /home/gandalf/mysqlbackup.sh auto
 
 DATESTAMP=$(date +"%d.%m.%Y-%H%M")
 DAY=$(date +"%d")
@@ -15,12 +15,12 @@ DAYOFWEEK=$(date +"%A")
 
 # Variables #
 
-MYSQLROOT= # use =root if want to backup all
-MYSQLPASS= # if use =root above, then can leave this empty, as password is saved at ~/.my.cnf file
-DATABASE='<db name>'  # use '--all-databases' if want to backup all
+#MYSQLROOT= # use =root if want to backup all
+#MYSQLPASS= # if use =root above, then can leave this empty, as password is saved at ~/.my.cnf file
+DATABASE='db01'  # use '--all-databases' if want to backup all
 FILENAME=mysql-${DATESTAMP}
-DESDIR=/path/to/backupdir
-S3BUCKET=	#S3 bucket name
+DESDIR=/home/gandalf/backupdir
+S3BUCKET=svr2backups
 # the following line prefixes the backups with the defined directory. 
 #it must be blank or end with a /
 S3PATH=mysql/
