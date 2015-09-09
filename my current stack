@@ -1,4 +1,5 @@
-### Current Stack ###
+### My Magento Stack ###
+### Version: 2.0 ###
 ## 01 Sept 2015##
 # Author: Sheikh Farhan #
 
@@ -46,37 +47,44 @@ Emails Infrastructure Set-Up:
 Postfix (Server Side)
 Zoho Mail for Domain Email Addresses (SPF and Domain Keys verified)
 
-Backup:
-Daily Backup Scripts for Website and Database 
+Daily Backup Scripts for:
+Website
+Database 
 Auto-transferred to S3 Bucket
 
 Monitoring Tools:
-Longview
 Serverpilot Stats
 
-Others:
-AWS S3 Account for remote storage
-DNS Set-Up
-Subdomain em.<domain>.com for transactional emails
-IDE for future collab configured: Koding.com
+DNS Set-up:
+domain.com
+em.domain.com (for transactional emails)
+
+Remote Storage:
+s3cmd installed for AWS S3 Account
 
 Website:
 Magento Framework 1.9.2.1 Installed
-Intenso 1.3.5 Theme Installed
 PHP Optimised via .user.ini file 
 Apache Optimised via .htaccess
 
-Snapshots Disks and Images at Linode
+Dev Tools Installed:
+IDE by Koding.com
+Modman 
+n98-magerun
+
+Snapshots Disk at Linode: 
+My Magento Stack (V2) #03-010915
 
 To do list:
+Redis
 SMFTP Pro Extension From Ashroder 
 Mailgun, Mandrill or Sendgrid Set-Up for Transactional Emails
+Lesti Full Page Cache
 Minify js and css
 Merge scripts
-ngx_pagespeed 
+Pagespeed Module
 Load Balancer
 Turpentine or Varnish
-Benchmark APC with Zend Opcache
 Memcached Sessions
 Redis Magento Cache
 CDN Set-Up
