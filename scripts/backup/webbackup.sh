@@ -7,7 +7,7 @@
 ## Place this file in /home/path/under/user
 ## automatic daily / weekly / monthly backup to S3.
 ## Add the line below to cronjob (user not root!) for a 4am daily run
-## 0 4 * * * sh /home/gandalf/webbackup.sh auto
+## 0 4 * * * sh webbackup.sh auto
 
 
 
