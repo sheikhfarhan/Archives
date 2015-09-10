@@ -6,13 +6,13 @@
 
 <b>Creating a new my.cnf file</b>
 
-<b>To configure Logrotate to housekeep our log files</b>
+<b>Logrotate settings to housekeep our log files</b>
 
 <b> Creating Back-Up Scripts and Cron to AWS S3 Bucket</b>
 
-<b>Uploading secured and configured .htaccess file for phpmyadmin</b>
+<b>Uploading secured .htaccess file for phpmyadmin</b>
 
-<b> To Upload an optimised .htaccess file for website</b>
+<b> Configure an optimised .htaccess file for Apache Web Server</b>
 
-<b> Optime PHP settings with a .user.ini</b>
+<b> Optimize PHP settings with a .user.ini</b>
 
