@@ -16,3 +16,5 @@
 
 <b> Optimize PHP settings with a .user.ini</b>
 
+<b> Setting Up Redis with Multiple Instances</b>
+
