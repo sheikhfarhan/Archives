@@ -65,6 +65,7 @@ Website:
 Magento Framework 1.9.2.1 Installed
 PHP Optimised via .user.ini file 
 Apache Optimised via .htaccess
+Intenso Theme 1.3.6 Installed
 
 Dev Tools/Extensions Installed:
 IDE by Koding.com
@@ -77,13 +78,12 @@ SMTP Pro Extension by Ashroder
 Snapshots Disk at Linode
 
 To do list:
-Install Theme
 Lesti Full Page Cache configured with seperate Redis Server
+SSL Certificate
 Minify js and css
 Merge scripts
 Pagespeed Module
 Load Balancer
-Turpentine or Varnish
 CDN Set-Up
 Load test
 
