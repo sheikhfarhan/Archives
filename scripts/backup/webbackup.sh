@@ -1,8 +1,8 @@
 #!/bin/sh
 #Purpose = Backup of Website 
-#Created = 16-7-2015
+#Created = 09-10-2015
 #Author = Sheikh Farhan
-#Version = 1.1
+#Version = 2.0
 
 ## Place this file in /home/path/under/user
 ## automatic daily / weekly / monthly backup to S3.
