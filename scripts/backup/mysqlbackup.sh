@@ -1,8 +1,8 @@
 #!/bin/sh
 #Purpose = Backup of Database
-#Created on 16-7-2015
+#Created on 09-10-2015
 #Author = Sheikh Farhan
-#Version 3.0
+#Version 4.0
 
 ## Create and Place this file in /home/path/under/user
 ## Run a cronjob under user not root!
