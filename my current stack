@@ -33,11 +33,6 @@ Zend-Opcache
 Mariadb 10.1 with Custom Configured my.cnf
 Database Web Tool: PhpMyAdmin (password protected)
 
-Seperate Redis Servers (different port) for:
-System/Data (cm_redis_backend)
-Sessions (cm_redis_session)
-Full Page Cache
-
 Security:
 Disable Root Access
 Passwordless Log-In / SSH Keys Authentications
@@ -55,7 +50,9 @@ Website and Database Auto-Transferred to S3 Bucket
 Monitoring Tools:
 Serverpilot Stats
 
-DNS Set-up
+DNS Set-up:
+Staging and Data subdomain
+CNAME - mail
 
 Remote Storage:
 s3cmd installed for AWS S3 Account
@@ -69,19 +66,28 @@ Dev Tools/Extensions/Optimisations Installed:
 IDE by Koding.com
 Modman 
 n98-magerun
-Redis Manager
 AOE Scheduler
 SMTP Pro Extension by Ashroder
+
+Redis Manager (in sleeping mode - to test pre-prodcution)
+Seperate Redis Servers - 2 different ports for:
+System/Data (cm_redis_backend) and
+Sessions (cm_redis_session)
+Third for FPC maybe?
+
+Snapshots Disks/Stack at Linode
+
+Once the categories and sample products are up:
+Proxy Cache (or maybe Varnish?)
+Browser Caching/Expire Headers
+Activate Google Pagespeed
 Minify js and css
 Merge scripts
-Pagespeed Module
-
-Snapshots Disk at Linode
-
-To do list:
+Optimize Images using Kraken, JpegOptim + Optipng or if not at linux level, using GIMP
 SSL Certificate
 Load Balancer
-CDN Set-Up
-Load test
+CDN Set-Up (DIY or maybe Cloundfront or MaxCDN?)
+Load test - Siege and ab testing
+Server Monitoring Tools - New Relic, Munin etc..
 
 
