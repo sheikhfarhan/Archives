@@ -18,16 +18,16 @@ DAY=$(date +"%d")
 DAYOFWEEK=$(date +"%A")
 
 FILENAME=website-$DATESTAMP.tar.gz   # Backup file name format
-SRCDIR=/srv/users/aragorn/apps/website/public     # Location / Source of Backup
+SRCDIR=/srv/users/aragorn/apps/magento/public     # Location / Source of Backup
 DESDIR=/home/gandalf/backupdir      # Destination Directory (create this dir first!)
 S3BUCKET=svr2backups    #bucket name must be exact as per our S3
 S3PATH=website/
 
 # Save and Tar Website Folders and Files 
 # Not including cache,sessions and tmp files
-# Should be easier to do an exlude.txt.. oh well..
+# Should be easier to do an exlude.txt.. hmm..
 
-tar -cpzf ${DESDIR}/${FILENAME} $SRCDIR --exclude='/srv/users/aragorn/apps/website/public/media/catalog/product/cache' --exclude='/srv/users/aragorn/apps/website/public/var/cache' --exclude='/srv/users/aragorn/apps/website/public/var/session' --exclude='/srv/users/aragorn/apps/website/public/var/tmp' --exclude='/srv/users/aragorn/apps/website/public/var/package/tmp' 
+tar -cpzf ${DESDIR}/${FILENAME} $SRCDIR --exclude='/srv/users/aragorn/apps/magento/public/media/catalog/product/cache' --exclude='/srv/users/aragorn/apps/magento/public/var/cache' --exclude='/srv/users/aragorn/apps/magento/public/var/session' --exclude='/srv/users/aragorn/apps/magento/public/var/tmp' --exclude='/srv/users/aragorn/apps/magento/public/var/package/tmp' 
 
 echo "Done backing up and compressing the website to a file."
 
@@ -61,7 +61,7 @@ echo "Uploading the new backup to S3..."
 s3cmd put -f ${DESDIR}/${FILENAME} s3://${S3BUCKET}/${S3PATH}${PERIOD}/
 echo "New backup uploaded succesfully to S3."
 
-# should do if fail output to log file or email
+# to do if fail output to log file or email?
 
 echo "Removing the cache files..."
 
