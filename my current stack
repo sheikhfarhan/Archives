@@ -26,11 +26,12 @@ Users: <> <> <>
 Optimised Stack: 
 Linux - Ubuntu 14.04 LTS
 PHP 5.6
-Nginx Stable as Web Server
+Nginx Stable as Proxy Web Server
+Apache Backend
 PHP-FPM/FastCGI
 Zend-Opcache
 Mariadb 10.1 with Custom Configured my.cnf
-Database Web Tool: PhpMyAdmin (password protected via pma-pass)
+Database Web Tool: PhpMyAdmin (password protected)
 
 Seperate Redis Servers (different port) for:
 System/Data (cm_redis_backend)
