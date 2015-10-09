@@ -2,7 +2,7 @@
 
 <b> My Current Stack </b>
 
-<b> Drop Apache for Nginx as web server </b>
+<b> Nginx as proxy web server infront Apache</b>
 
 <b>Switching from Mysql 5.5 to Mariadb 10.1</b>
 
