@@ -1,17 +1,15 @@
-Create and Edit new file "cronjob" in /etc/logrotate.d
-
-$ vi /etc/logrotate.d/cronjob
+$ sudo vim /etc/logrotate.d/cronjob
 
 Enter config lines in the file..
 
-/var/log/cronjob/mysqlcheck.log
-/var/log/cronjob/webbackup.log
-/var/log/cronjob/mysqlbackup.log
-/var/log/cronjob/magephp.log
+/home/gandalf/log/cron/mysqlcheck.log
+/home/gandalf/log/cron/webbackup.log
+/home/gandalf/log/cron/mysqlbackup.log
 {
+        su gandalf root
         rotate 7
-        weekly
-        missingok
+       	weekly
+       	missingok
         notifempty
         delaycompress
         compress
@@ -19,7 +17,4 @@ Enter config lines in the file..
         }
 
 Test:
-$ logrotate -v -f /etc/logrotate.d/cronjob
-
-See if new compressed files are created
-/var/log/cronjob
+$ sudo logrotate -v -f /etc/logrotate.d/cronjob
