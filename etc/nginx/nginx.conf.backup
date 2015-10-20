@@ -28,6 +28,5 @@ http {
 
     #gzip  on;
 
-    #include /etc/nginx/conf.d/*.conf; (original nginx line)
-    include /etc/nginx/www.d/*.conf;
+    include /etc/nginx/conf.d/*.conf;
 }
